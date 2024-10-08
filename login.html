@@ -150,17 +150,10 @@
         const email = document.querySelector(".sign-in-form input[type='email']").value;
         const password = document.querySelector(".sign-in-form input[type='password']").value;
     
-        // Dummy login logic for demo purposes
-         if (email === ''|| password === '') {
+       if (email === ''&& (!email.value.match===(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)) || password === '') {
           alert('Please fill in all fields');
-          return;
+          return false;
         }
-    
-        // Dummy signup logic for demo purposes
-        
-        localStorage.setItem('email', email);
-        localStorage.setItem('password', password);
-        localStorage.setItem('isLoggedIn', 'true');
     
         alert('Sign in successful!'); // Redirect to dashboard page
         window.location.href = 'index.html';
