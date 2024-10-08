@@ -18,7 +18,7 @@ document.querySelector(".sign-in-form").addEventListener('submit', function(even
   const email = document.querySelector(".sign-in-form input[type='email']").value;
   const password = document.querySelector(".sign-in-form input[type='password']").value;
 
-  if (email === ''&& (!email.value.match===(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)) || password === '') {
+  if (email === '' || (!email.value.match===(/^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/)) || password === '') {
           alert('Please fill in all fields');
           return false;
         }
