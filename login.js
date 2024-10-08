@@ -7,7 +7,7 @@ sign_up_btn.addEventListener("click", () => {
 });
 
 sign_in_btn.addEventListener("click", () => {
-  container.classList.remove("sign-up-mode");
+  container.classList.remove("sign-in-mode");
 });
 
 // Sign in form submission
@@ -15,17 +15,23 @@ document.querySelector(".sign-in-form").addEventListener('submit', function(even
   event.preventDefault();
 
   // Get the input values
-  const username = document.querySelector(".sign-in-form input[type='text']").value;
+  const email = document.querySelector(".sign-in-form input[type='email']").value;
   const password = document.querySelector(".sign-in-form input[type='password']").value;
 
   // Dummy login logic for demo purposes
-  if (username === 'admin' && password === 'password') {
-    alert('Login successful!');
-    // Redirect to dashboard page
-    window.location.href = 'index.html';
-  } else {
-    alert('Invalid username or password');
-  }
+   if (email === ''|| password === '') {
+          alert('Please fill in all fields');
+          return;
+        }
+    
+        // Dummy signup logic for demo purposes
+        
+        localStorage.setItem('email', email);
+        localStorage.setItem('password', password);
+        localStorage.setItem('isLoggedIn', 'true');
+    
+        alert('Sign in successful!'); // Redirect to dashboard page
+        window.location.href = 'index.html';
 });
 
 // Sign up form submission
